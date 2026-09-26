@@ -1,0 +1,16 @@
+footer {
+  background-color: var(--surface-alt); /* #F3EEE3 ivoire, se détache du fond blanc du site */
+  padding: 1.5rem 3rem;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+}
+
+footer p {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+}

@@ -1,0 +1,136 @@
+#home {
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#home h1 {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* Bandeau de catégories */
+#categories {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+#categories button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 8px;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+#categories button:hover {
+  color: var(--text-primary);
+}
+
+#categories button.active {
+  color: var(--nature);
+  border-bottom-color: var(--accent);
+}
+
+/* Grille produits */
+#products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+/* Le Link qui enveloppe ProductItem ne doit pas avoir de style de lien par défaut */
+#products a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Loading (utilisée pour le chargement initial ET l'infinite scroll) */
+.logo-loading {
+  display: block;
+  margin: 4rem auto;
+  width: 60px;
+  height: 60px;
+}
+
+/* Sentinel invisible pour l'observer, juste une zone de déclenchement */
+#scroll-sentinel {
+  height: 1px;
+}
+
+/* Erreur */
+#home p {
+  text-align: center;
+  color: var(--secondary);
+  font-size: 14px;
+  margin-top: 2rem;
+}
+
+#scroll-top {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 1rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background-color: #ffffff;
+  color: var(--nature);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  z-index: 50;
+}
+
+#scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#scroll-top:hover {
+  background-color: var(--nature);
+  border-color: var(--nature);
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  #scroll-top {
+    bottom: 1.5rem;
+    right: 1rem;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+}

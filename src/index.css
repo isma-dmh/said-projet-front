@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap');
+
+.comfortaa {
+ font-family: "Sniglet", system-ui !important;
+  font-weight: 300;
+  font-style: normal;
+}
+:root {
+  /* Fond obligatoire blanc pur, pour matcher les photos produit */
+  --bg: #ffffff;
+  --surface-alt: #f3eee3; /* ivoire, pour sections alternées / bandeaux */
+  --text-primary: #3e2e23; /* brun écorce */
+  --text-secondary: #6b6b6b;
+  --nature: #2c3b2e; /* vert forêt */
+  --accent: #c09a55; /* ocre mat */
+  --secondary: #a9673f; /* terre cuite */
+  --border: #e5e0d3; /* légèrement plus visible sur fond blanc */
+
+  --font-heading: "Fraunces", Georgia, serif;
+  --font-body: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+}
+
+/* Sections alternées pour rythmer la page sans casser le fond blanc des images */
+.section-alt {
+  background-color: var(--surface-alt);
+}
+
+.card {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.text-nature {
+  color: var(--nature);
+}
+
+.text-secondary-brand {
+  color: var(--secondary);
+}
+
+.product-image-wrapper {
+  background-color: #ffffff; /* redondant avec bg mais explicite pour les blocs produit */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Application de base */
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+}
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-weight: 500;
+}
+
+.text-nature {
+  color: var(--nature);
+}
+
+.text-secondary-brand {
+  color: var(--secondary);
+}
+
+a {
+  color: var(--nature); /* #2C3B2E */
+  text-decoration: underline;
+  text-decoration-color: var(--border); /* soulignement discret */
+  text-underline-offset: 3px;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--secondary); /* #A9673F terre cuite */
+  text-decoration-color: var(--secondary);
+}
+
+a:visited {
+  color: var(--nature);
+  opacity: 0.85;
+}
+
+.logo-loading {
+  display: block;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 4rem auto;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
